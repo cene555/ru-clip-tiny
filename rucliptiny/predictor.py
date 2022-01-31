@@ -1,6 +1,7 @@
 import torch
 from PIL import Image
 from .utils import get_transform
+from .tokenizer import Tokenizer
 
 
 class Predictor:
