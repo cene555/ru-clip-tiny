@@ -7,6 +7,7 @@ import pandas as pd
 import os
 from PIL import Image
 
+
 class RuCLIPTinyDataset(Dataset):
     def __init__(self, dir, df_path, max_text_len=77):
         self.df = pd.read_csv(df_path)
@@ -14,6 +15,7 @@ class RuCLIPTinyDataset(Dataset):
         self.max_text_len = max_text_len
         self.tokenizer = Tokenizer()
         self.transform = get_transform()
+
     def __getitem__(self, idx):
         # достаем имя изображения и ее лейбл
         image_name = self.df['image_name'].iloc[idx]
@@ -25,5 +27,6 @@ class RuCLIPTinyDataset(Dataset):
         image = Image.fromarray(image)
         image = self.transform(image)
         return image, input_ids, attention_mask
+
     def __len__(self):
         return len(self.df)

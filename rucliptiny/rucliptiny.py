@@ -5,13 +5,14 @@ import torch.nn.functional as F
 from torch import nn
 from transformers import DistilBertModel, DistilBertConfig
 
+
 class RuCLIPtiny(nn.Module):
     def __init__(self):
         super().__init__()
         self.visual = create_model('convnext_tiny',
                                    pretrained=False,
                                    num_classes=0,
-                                   in_chans=3) # out 768
+                                   in_chans=3)  # out 768
         text_config = DistilBertConfig(**{"vocab_size": 30522,
                                           "max_position_embeddings": 512,
                                           "n_layers": 3,
@@ -22,6 +23,7 @@ class RuCLIPtiny(nn.Module):
         self.transformer = DistilBertModel(text_config)
         self.final_ln = torch.nn.Linear(264, 768)
         self.logit_scale = torch.nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
+
     @property
     def dtype(self):
         return self.visual.stem[0].weight.dtype
