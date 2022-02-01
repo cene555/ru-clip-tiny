@@ -3,7 +3,7 @@ Zero-shot image classification model for Russian language
 
 ---
 
-RuCLIPtiny (Russian Contrastive Language–Image Pretraining) is a neural network trained to work with different pairs (images, texts). Our model is based on [ConvNeXt-tiny](https://github.com/facebookresearch/ConvNeXt) and [DistilRuBert-tiny](https://huggingface.co/DeepPavlov/distilrubert-tiny-cased-conversational-v1), and is supported by extensive research zero-shot transfer, computer vision, natural language processing, and multimodal learning.
+RuCLIP tiny (Russian Contrastive Language–Image Pretraining) is a neural network trained to work with different pairs (images, texts). Our model is based on [ConvNeXt-tiny](https://github.com/facebookresearch/ConvNeXt) and [DistilRuBert-tiny](https://huggingface.co/DeepPavlov/distilrubert-tiny-cased-conversational-v1), and is supported by extensive research zero-shot transfer, computer vision, natural language processing, and multimodal learning.
 
 ## Result evaluation
 
