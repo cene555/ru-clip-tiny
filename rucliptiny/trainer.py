@@ -23,7 +23,7 @@ class Trainer:
         self.num_workers = num_workers
         self.weight_decay = weight_decay
         self.grad_accum = grad_accum
-        print(f"train batch size = {self.train_batch_size * self.grad_accum}"}
+        print(f"train batch size = {self.train_batch_size * self.grad_accum}")
 
         def train_model(self, model, epochs_num=1, device='cuda', verbose=10):
 
