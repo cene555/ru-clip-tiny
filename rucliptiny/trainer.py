@@ -102,6 +102,7 @@ class Trainer:
                     torch.nn.utils.clip_grad_norm_(model.parameters(), 2)
                     X = []
                     Y = []
+                    curr_batch += 1
             if is_val:
                 print(f'start val epoch {epoch}')
                 total_loss = 0
