@@ -33,7 +33,7 @@ Download CLIP image from repo
 ```python3
 !wget -c -O CLIP.png https://github.com/openai/CLIP/blob/main/CLIP.png?raw=true
 ```
-0. Import libraries
+1. Import libraries
 ```python3
 from rucliptiny.predictor import Predictor
 from rucliptiny import RuCLIPtiny
