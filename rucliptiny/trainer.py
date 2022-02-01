@@ -99,7 +99,7 @@ class Trainer:
                     total_loss.backward()
                     optimizer.step()
                     scheduler.step()
-                    torch.nn.utils.clip_grad_norm_(clip_model.parameters(), 2)
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), 2)
                     X = []
                     Y = []
             if is_val:
