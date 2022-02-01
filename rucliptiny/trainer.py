@@ -87,7 +87,7 @@ class Trainer:
                     optimizer.zero_grad()
                     X = torch.cat(X, axis=0).cuda()
                     Y = torch.cat(Y, axis=0).cuda()
-                    logit_scale = clip_model.logit_scale.exp()
+                    logit_scale = model.logit_scale.exp()
                     logits_per_image = logit_scale * X @ Y.t()
                     logits_per_text = logits_per_image.t()
                     ground_truth = torch.arange(X.shape[0], dtype=torch.long).cuda()
