@@ -83,7 +83,7 @@ class Trainer:
                 X.append(image_features)
                 Y.append(text_features)
 
-                if ((i + 1) % accum_iter == 0) or (i + 1 == len(train_loader)):
+                if ((i + 1) % self.grad_accum == 0) or (i + 1 == len(train_loader)):
                     optimizer.zero_grad()
                     X = torch.cat(X, axis=0).cuda()
                     Y = torch.cat(Y, axis=0).cuda()
