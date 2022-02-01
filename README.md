@@ -5,7 +5,11 @@ Zero-shot image classification model for Russian language
 
 RuCLIPtiny (Russian Contrastive Language–Image Pretraining) is a neural network trained to work with different pairs (images, texts). Our model is based on [ConvNeXt-tiny](https://github.com/facebookresearch/ConvNeXt) and [DistilRuBert-tiny](https://huggingface.co/DeepPavlov/distilrubert-tiny-cased-conversational-v1), and is supported by extensive research zero-shot transfer, computer vision, natural language processing, and multimodal learning.
 
-# Examples
+## Result evaluation
+
+Our model achieved 46.62% top1 and 73.18% top5 zero-shot accuracy on CIFAR100
+
+## Examples
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-l2JtynS3ZwlE8g5wNYNdTYUVQRLWl9m?usp=sharing)
 Evaluate & Simple usage
@@ -15,6 +19,8 @@ Finetuning
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Yl1oVem3Pw0o1ZlukR2Fg9dGyqRFeu1z?usp=sharing)
 ONNX conversion and speed testing
+
+### [Model weights](https://drive.google.com/uc?id=1-3g3J90pZmHo9jbBzsEmr7ei5zm3VXOL)
 
 ## Usage
 Install rucliptiny module and requirements first. Use this trick
@@ -52,13 +58,9 @@ text_probs = predictor(model=model, images_path=["CLIP.png"],
                        max_len=77, device=device)
 ```
 
-## Result evaluation
-
-Our model achieved 46.62% top1 and 73.18% top5 zero-shot accuracy on CIFAR100
-
 ## Cosine similarity Visualization Example
 
-![image](https://github.com/cene555/ru-clip-tiny/blob/main/pictures/similarity.png)
+![image](https://github.com/cene555/ru-clip-tiny/blob/main/pictures/similarity.jpg)
 
 ## Speed Testing
 
