@@ -18,6 +18,7 @@ class Predictor:
                 image_features = model.encode_image(image.unsqueeze(0).to(device)).float().cpu()[0]
             images_features.append(image_features)
         images_features = torch.stack(images_features, axis=0)
+        images_features /= images_features.norm(dim=-1, keepdim=True)
         return images_features.cpu()
 
     def prepare_text_features(self, model, texts, max_len=77, device='cpu'):
