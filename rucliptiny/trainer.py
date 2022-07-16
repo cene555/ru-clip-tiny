@@ -97,9 +97,10 @@ class Trainer:
                     if curr_batch % verbose == 0:
                         print(f'{i}/{len(train_loader)} total_loss {total_loss}')
                     total_loss.backward()
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), 1)
                     optimizer.step()
                     scheduler.step()
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), 2)
+                    
                     X = []
                     Y = []
                     curr_batch += 1
